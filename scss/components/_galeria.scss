@@ -1,0 +1,20 @@
+.section_galeria{
+    div{
+        @include flex (flex, row, center, space-around, wrap);
+        .div_img{
+            width: 300px;
+            transition-property: all;
+            transition-duration: 1s;
+            &:hover{
+                width: 400px;
+            }
+            img{
+                width: 300px;
+                transition-property: all;
+                transition-duration: 1s;
+                width: 100%;
+                margin: 20px;
+            }
+        }
+    }
+}

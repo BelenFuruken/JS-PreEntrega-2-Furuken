@@ -1,0 +1,13 @@
+.sect_talles{
+    h2{
+        margin: 20px;
+    }
+    .talles{
+        @include flex (flex, row, center, space-around, wrap);
+        div{
+            img{
+                width: 500px;
+            }
+        }
+    }
+}

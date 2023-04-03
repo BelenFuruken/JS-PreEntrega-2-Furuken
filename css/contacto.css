@@ -1,0 +1,221 @@
+/*!   GENERALES   */
+*{
+    margin: 0%;
+    padding: 0%;
+}
+a{
+    text-decoration: none;
+}
+.ajuste_img{
+    object-fit: cover;
+}
+
+/*!  BARRA DE NAVEGACIÓN  
+.logo{
+    background-color: black;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    color: white;
+    font-size: 50px;
+}
+header{
+    background-color: rgb(66, 63, 63);
+}
+.navegacion li a{
+    color: white;
+    padding: 25px;
+}
+nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.navegacion{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 35px;
+}
+ */
+.contacto_img{
+    width: 100%;
+    height: 500px;
+}
+
+/*  FORMILARIOS  */
+section{
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+    grid-template-areas: 
+    "formulario redes"
+    ;
+}
+.formulario{
+    grid-area: formulario;
+}
+.redes{
+    grid-area: redes;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+h4{
+    font-size: 18px;
+    margin: 15px 0px 3px 0px;
+}
+p{
+    font-size: 15px;
+    margin: 20px;
+}
+
+.input_comun{
+    height: 30px;
+    width: 85%;
+}
+.input_mensaje{
+    height: 95px;
+    width: 85%;
+}
+.btn_enviar{
+    display: block;
+    margin-top: 15px;
+    height: 30px;
+    width: 25%;
+}
+
+/*!
+.circulo{
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+}
+.circulo img{
+    width: 60%;
+    object-fit: cover;
+}
+.redes_inconos{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+*/
+
+/*!   FOOTER   */
+footer{
+    margin-top: 10px;
+    height: 180px;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "ubi redes suscrip";
+}
+h5{
+    color: white;
+    margin: 10px;
+}
+.ubi{
+    grid-area: ubi;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    margin-left: 15px;
+}
+.redes_nav{
+    grid-area: redes;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.suscrip{
+    grid-area: suscrip;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.input_footer{
+    margin: 5px;
+    height: 23px;
+    width: 50%;
+}
+.btn_footer{
+    padding: 5px;
+    margin: 10px;
+    width: 20%;
+    height: 38px;
+}
+h5{
+    font-size: medium;
+}
+.circulo{
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+.circulo img{
+    width: 60%;
+}
+
+/*!   MEDIA QUERY   */
+@media screen and (max-width: 750px){
+    section{
+        margin: 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 20px;
+        grid-template-areas: 
+        "formulario formulario"
+        "redes redes"
+        ;
+    }
+    footer{
+        margin-top: 10px;
+        height: auto;
+        background-color: black;
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "ubi"
+        "redes"
+        "suscrip";
+    }
+
+}
+@media screen and (max-width:640px){
+    .navegacion{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    .navegacion li {
+        margin: 10px;
+    }
+}
+.fuente_logo{
+    font-family: 'Bevan', cursive;
+    font-size: 40px;
+}

@@ -1,0 +1,279 @@
+* {
+  margin: 0%;
+  padding: 0%; }
+
+a {
+  text-decoration: none; }
+
+.ajuste_img {
+  object-fit: cover; }
+
+h5 {
+  font-size: medium;
+  color: white; }
+
+.fuente_logo {
+  font-family: 'Russo One', sans-serif; }
+
+.fuente_nav {
+  font-family: 'Chakra Petch', sans-serif; }
+
+nav .fuente_logo {
+  font-size: 50px; }
+
+footer {
+  margin-top: 10px;
+  height: 180px;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "ubi redes suscrip"; }
+  footer .ubi {
+    grid-area: ubi;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    margin-left: 15px; }
+    footer .ubi .circulo {
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap; }
+      footer .ubi .circulo img {
+        width: 60%; }
+    footer .ubi h5 {
+      font-size: medium; }
+  footer .redes {
+    grid-area: redes;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap; }
+    footer .redes div {
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap; }
+      footer .redes div img {
+        width: 60%; }
+    footer .redes div {
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap; }
+      footer .redes div img {
+        width: 60%; }
+    footer .redes div {
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap; }
+      footer .redes div img {
+        width: 60%; }
+  footer .suscrip {
+    grid-area: suscrip;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; }
+    footer .suscrip .input_footer {
+      margin: 5px;
+      height: 23px;
+      width: 50%; }
+    footer .suscrip .btn_footer {
+      margin: 10px; }
+
+body .portada {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; }
+  body .portada img {
+    width: 70%; }
+
+body .grid_conteiner_inicio {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 450px;
+  gap: 5px;
+  grid-template-areas: "n_col n_col n_col" "remeras casacas hoodies" "remeras accesorios hoodies" "ofertas ofertas ofertas"; }
+  body .grid_conteiner_inicio .remeras {
+    grid-area: remeras; }
+    body .grid_conteiner_inicio .remeras a {
+      width: 100%;
+      height: 100%; }
+      body .grid_conteiner_inicio .remeras a img {
+        width: 100%;
+        height: 100%; }
+  body .grid_conteiner_inicio .hoodies {
+    grid-area: hoodies; }
+    body .grid_conteiner_inicio .hoodies a {
+      width: 100%;
+      height: 100%; }
+      body .grid_conteiner_inicio .hoodies a img {
+        width: 100%;
+        height: 100%; }
+  body .grid_conteiner_inicio .accesorios {
+    grid-area: accesorios; }
+    body .grid_conteiner_inicio .accesorios a {
+      width: 100%;
+      height: 100%; }
+      body .grid_conteiner_inicio .accesorios a img {
+        width: 100%;
+        height: 100%; }
+  body .grid_conteiner_inicio .casacas {
+    grid-area: casacas; }
+    body .grid_conteiner_inicio .casacas a {
+      width: 100%;
+      height: 100%; }
+      body .grid_conteiner_inicio .casacas a img {
+        width: 100%;
+        height: 100%; }
+  body .grid_conteiner_inicio .ofertas {
+    grid-area: ofertas; }
+    body .grid_conteiner_inicio .ofertas a {
+      width: 100%;
+      height: 100%; }
+      body .grid_conteiner_inicio .ofertas a img {
+        width: 100%;
+        height: 100%; }
+  body .grid_conteiner_inicio .n_col {
+    grid-area: n_col; }
+    body .grid_conteiner_inicio .n_col a {
+      width: 100%;
+      height: 100%; }
+      body .grid_conteiner_inicio .n_col a img {
+        width: 100%;
+        height: 100%; }
+
+.section_galeria div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap; }
+  .section_galeria div .div_img {
+    width: 300px;
+    transition-property: all;
+    transition-duration: 1s; }
+    .section_galeria div .div_img:hover {
+      width: 400px; }
+    .section_galeria div .div_img img {
+      width: 300px;
+      transition-property: all;
+      transition-duration: 1s;
+      width: 100%;
+      margin: 20px; }
+
+.sect_talles h2 {
+  margin: 20px; }
+
+.sect_talles .talles {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap; }
+  .sect_talles .talles div img {
+    width: 500px; }
+
+body .contacto_img {
+  width: 100%;
+  height: 500px; }
+
+body .sect_contactos {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px;
+  grid-template-areas: "formulario info"; }
+  body .sect_contactos .formulario {
+    grid-area: formulario; }
+    body .sect_contactos .formulario h4 {
+      font-size: 18px;
+      margin: 15px 0px 3px 0px; }
+    body .sect_contactos .formulario .input_comun {
+      height: 30px;
+      width: 85%; }
+    body .sect_contactos .formulario .input_mensajes {
+      height: 95px;
+      width: 85%; }
+    body .sect_contactos .formulario button {
+      display: block;
+      margin-top: 15px;
+      height: 30px;
+      width: 25%; }
+  body .sect_contactos .info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%; }
+    body .sect_contactos .info h4 {
+      font-size: 18px;
+      margin: 15px 0px 3px 0px; }
+    body .sect_contactos .info p {
+      font-size: 15px;
+      margin: 20px; }
+
+/*!   INICIO   */
+@media screen and (max-width: 1100px) {
+  body .grid_conteiner_inicio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 450px;
+    gap: 5px;
+    grid-template-areas: "n_col n_col " "remeras  hoodies" "casacas accesorios " "ofertas ofertas "; } }
+
+@media screen and (max-width: 600px) {
+  body .grid_conteiner_inicio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 450px;
+    gap: 15px;
+    grid-template-areas: "n_col n_col " "remeras  remeras" "hoodies hoodies" "casacas casacas " "accesorios accesorios" "ofertas ofertas "; } }
+
+@media screen and (max-width: 760px) {
+  footer {
+    margin-top: 10px;
+    height: auto;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "ubi" "redes" "suscrip"; } }
+
+/*!   CONTACTOS   */
+@media screen and (max-width: 750px) {
+  body .sect_contactos {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+    grid-template-areas: "formulario formulario" "info info"; } }

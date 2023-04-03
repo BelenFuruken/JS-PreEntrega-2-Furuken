@@ -1,0 +1,62 @@
+
+footer{
+    margin-top: 10px;
+    height: 180px;
+    background-color: nth($colores_principales, 1 );
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "ubi redes suscrip";
+    .ubi{
+        grid-area: ubi;
+        @include flex(flex, row, center, start, wrap);
+        margin-left: 15px;
+        .circulo{
+            @include footer_redes (50%, 70px, 70px);
+            @include flex (flex, row, center, center, wrap);
+            img{
+                width: 60%;
+            }
+        }
+        h5{
+            font-size: medium;
+        }
+    }
+    .redes{
+        grid-area: redes;
+        @include flex (flex, row, center, space-evenly, wrap);
+        div{
+            @include footer_redes (50%, 70px, 70px);
+            @include flex (flex, row, center, center, wrap);
+            img{
+                width: 60%;
+            }
+        }
+        div{
+            @include footer_redes (50%, 70px, 70px);
+            @include flex (flex, row, center, center, wrap);
+            img{
+                width: 60%;
+            }
+        }
+        div{
+            @include footer_redes (50%, 70px, 70px);
+            @include flex (flex, row, center, center, wrap);
+            img{
+                width: 60%;
+            }
+        }
+    }
+    .suscrip{
+        grid-area: suscrip;
+        @include flex (flex, column, center, center, wrap);
+        .input_footer{
+            margin: 5px;
+            height: 23px;
+            width: 50%;
+        }
+        .btn_footer{
+            margin: 10px;
+        }
+    }
+}

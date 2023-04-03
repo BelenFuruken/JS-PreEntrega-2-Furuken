@@ -1,0 +1,22 @@
+$colores_principales:
+    black,
+    white;
+
+@mixin flex ($flex, $direction, $align, $justify, $wrap){
+    display: $flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+}
+
+@mixin usar_todo_el_contenedor ($ancho, $largo){
+    width: $ancho;
+    height: $largo;
+}
+
+@mixin footer_redes ($b_radio, $ancho, $largo){
+    border-radius: $b_radio;
+    width: $ancho;
+    height: $largo;
+}

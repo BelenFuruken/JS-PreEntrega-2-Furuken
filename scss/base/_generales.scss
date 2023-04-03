@@ -1,0 +1,21 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+@import "./variables";
+a{
+    text-decoration: none;
+}
+.ajuste_img{
+    object-fit: cover;
+}
+h5{
+    font-size: medium;
+    color: nth($colores_principales , 2 );
+}
+.fuente_logo{
+    font-family: 'Russo One', sans-serif;
+}
+.fuente_nav{
+    font-family: 'Chakra Petch', sans-serif;
+}
