@@ -1,0 +1,22 @@
+# PRE ENTREGA 2
+Curso Javascript
+
+## Authors
+Rocío Belén Furuken
+
+## Documentation
+Objeto: Contiene un objeto con el fin de guardar los datos de los productos (nombre del producto, precio neto y el cálculo del precio final, calculado con un IVA del 21% para todos).
+
+Arrays: Contiene un solo array que corresponde a un array de objetos.
+
+Los datos como el nomnre y el precio neto son ingresados por el usuario por teclado. Y se le indica por pantalla. Cada vez que termina de ingresar un producto se le pregunta si quiere ingresar otro más. Los resultados son mostrados por consola.
+
+Luego se pregunta si quiere un resumen de los productos ingresado junto con los datos correspondientes, que se van a ingresar por consola en forma de matriz.
+
+Finalmente se pregunta si quiere buscar algún producto para ver el resumen de información ingresada del mismo o para evaluar si fue ingresado o no. 
+
+## Feedback 
+Este proyecto es solamente un prototipo del proyecto final, con el unico fin de que el profesor lo pueda corregir. 
+
+## Used by
+Profesor/tutor de la comisión 39505.
