@@ -87,14 +87,16 @@
         <section class="sect_contactos">
             <div class="formulario fuente_nav">
                 <h4>NOMBRE</h4>
-                <Input class="input_comun" type="text"></Input>
+                <Input id="IpNombre" class="input_comun" type="text" required></Input>
+                <h4>APELLIDO</h4>
+                <Input id="IpApellido" class="input_comun" type="text"></Input>
                 <h4>MAIL</h4>
-                <Input class="input_comun" type="text"></Input>
-                <h4>COMPAÑIA/ORGANIZACIÓN</h4>
-                <Input class="input_comun" type="text"></Input>
+                <Input id="IpMail" class="input_comun" type="text"></Input>
                 <h4>MENSAJE</h4>
-                <Input class="input_mensaje" type="text"></Input>
-                <button type="button" class="btn btn-secondary btn-sm">ENVIAR</button>            </div>
+                <Input id="IpMensaje" class="input_mensaje " type="text"></Input>
+                <p id="alerta">xsax</p>
+                <button id="btn_enviar" type="submit" class="btn_form btn btn-secondary btn-sm">ENVIAR</button>            
+            </div>
             <div class="info fuente_nav">
                 <h4>MAIL</h4>
                 <P class="info_cont">----------@---------.com</P>
@@ -134,6 +136,6 @@
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous">
         </script>
+    <script src="../JavaScript/Contacto.js"></script>
     </body>
-
 </html>
