@@ -7,10 +7,11 @@ body{
         margin: 50px;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
+        grid-template-rows: 2fr;
         gap: 20px;
         grid-template-areas: 
-        "formulario info"
+        "formulario tarjeta"
+        "info info"
         ;
         .formulario{
             grid-area: formulario;
@@ -32,6 +33,9 @@ body{
                 height: 30px;
                 width: 25%;
             }
+        }
+        .DatosUsuario{
+            grid-area: tarjeta;
         }
         .info{
             grid-area: info;

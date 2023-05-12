@@ -7,7 +7,6 @@ class CargaDatos {
     }
 }
 let Carga = [];
-
 function envioDeFormulario(){
     //GUARDADO DE DATOS DEL ULTIMO CLIENTE INGRESADO.
     let nom = document.getElementById("IpNombre").value;
@@ -30,6 +29,20 @@ function envioDeFormulario(){
         document.getElementsByTagName("input")[i].value="";
         document.getElementById("alerta").innerText=""
     }
+    //ENVIARLO A LA TARJETA:
+    let ObjetoRecuperado = [];
+    ObjetoRecuperado = JSON.parse(localStorage.getItem("Cliente"));
+    console.log (ObjetoRecuperado);
+    for(i=0;i<ObjetoRecuperado.length;i++){
+        /*document.getElementById("tarjeta").innerHTML= "<p>Nombre: "+ObjetoRecuperado[i].nombre+"</p>";
+        document.getElementById("tarjeta").innerHTML= "<p>Apellido: "+ObjetoRecuperado[i].apellido+"</p>";
+        document.getElementById("tarjeta").innerHTML= "<p>Mail: "+ObjetoRecuperado[i].mail+"</p>";
+        */
+        document.getElementById("tarjetaNombre").innerText = "Nombre: "+ ObjetoRecuperado[i].nombre;
+        document.getElementById("tarjetaApellido").innerText = "Apellido: "+ ObjetoRecuperado[i].apellido;
+        document.getElementById("tarjetaMail").innerText = "Mail: "+ ObjetoRecuperado[i].mail;
+         
+    } 
 }
 const enviarFormulario = document.getElementById("btn_enviar");
 enviarFormulario.addEventListener("click", envioDeFormulario);
