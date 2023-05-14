@@ -16,7 +16,8 @@ function envioDeFormulario(){
     //VALIDACIÓN:
     if(nom.length == 0 || ape.length == 0 || m.length == 0 || msj.length == 0){
         console.log("entre");
-        document.getElementById("alerta").innerText="Debe completar todos los campos obligatriamente.";
+        alert("Debe completar todos los campos.");
+        return;
     }else{
         //SUBIDA AL LOCALSTORAGE:
         const ingreso = new CargaDatos (nom,ape,m,msj);
@@ -27,22 +28,27 @@ function envioDeFormulario(){
     //QUE QUEDEN LOS INPUT VACÍOS:
     for (let i=0; i<4;i++){
         document.getElementsByTagName("input")[i].value="";
-        document.getElementById("alerta").innerText=""
     }
     //ENVIARLO A LA TARJETA:
     let ObjetoRecuperado = [];
     ObjetoRecuperado = JSON.parse(localStorage.getItem("Cliente"));
     console.log (ObjetoRecuperado);
-    for(i=0;i<ObjetoRecuperado.length;i++){
-        /*document.getElementById("tarjeta").innerHTML= "<p>Nombre: "+ObjetoRecuperado[i].nombre+"</p>";
-        document.getElementById("tarjeta").innerHTML= "<p>Apellido: "+ObjetoRecuperado[i].apellido+"</p>";
-        document.getElementById("tarjeta").innerHTML= "<p>Mail: "+ObjetoRecuperado[i].mail+"</p>";
-        */
-        document.getElementById("tarjetaNombre").innerText = "Nombre: "+ ObjetoRecuperado[i].nombre;
-        document.getElementById("tarjetaApellido").innerText = "Apellido: "+ ObjetoRecuperado[i].apellido;
-        document.getElementById("tarjetaMail").innerText = "Mail: "+ ObjetoRecuperado[i].mail;
-         
-    } 
+    const tarjeta = document.getElementById('tarjeta');
+        tarjeta.innerHTML = '';
+        ObjetoRecuperado.forEach((usuario,index) => {
+        tarjeta.innerHTML += `
+        <p>USUARIO NÚMERO ${index+1}</p>
+        <p>Nombre: ${usuario.nombre}</p>
+        <p>Apellido: ${usuario.apellido}</p>
+        <p>Mail: ${usuario.mail}</p>
+        <p>-----------------------</p>
+        `
+        });
+    
 }
-const enviarFormulario = document.getElementById("btn_enviar");
-enviarFormulario.addEventListener("click", envioDeFormulario);
+function Eliminar(){
+    document.getElementById("tarjeta").innerHTML="";
+}
+
+document.getElementById("btn_enviar").addEventListener("click", envioDeFormulario);
+document.getElementById("btnEliminar").addEventListener("click", Eliminar);
