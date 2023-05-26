@@ -4,25 +4,25 @@ const baseDeDatos = [
         id: 1,
         nombre: 'Remera',
         precio: 8000,
-        imagen: '../img/remera.jpg'
+        imagen: '../img/remera.JPG'
     },
     {
         id: 2,
         nombre: 'Short',
         precio: 12000,
-        imagen: '../img/short.jpg'
+        imagen: '../img/short.JPG'
     },
     {
         id: 3,
         nombre: 'Hoodies',
         precio: 20000,
-        imagen: '../img/hoodie.jpg'
+        imagen: '../img/hoodie.JPG'
     },
     {
         id: 4,
         nombre: 'Casacas',
         precio: 17000,
-        imagen: '../img/casaca.jpg'
+        imagen: '../img/casaca.JPGS'
     }
 
 ];
