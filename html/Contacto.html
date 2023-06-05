@@ -14,6 +14,7 @@
         <meta name="keywords" content="ecommerce, ropa, oversize, argentina, streetwear, remeras, buzos, pantalones, short, accesorios">
         <meta name="description" content="Podes contactarnos por cualquiera de nuestras vias de comunicacion. Instagram, tiktok, mail. Podes hablarnos al whatsapp o dejarnos tus comentario o consulta en el formulario, y te responderemos via mail.">
         <link rel="shortcut icon" href="../img/logo-removebg-preview.png" type="image/x-icon">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <title>Contacto - BTB</title>
     </head>
     <body>
@@ -58,12 +59,6 @@
                                 <a class="nav-link fuente_nav" href="./Contacto.html">Contacto</a>
                             </li>
                         </ul>
-                        <!--
-                    <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                    -->
                     </div>
                 </div>
             </nav>
@@ -82,21 +77,12 @@
                 <h4>MENSAJE</h4>
                 <Input id="IpMensaje" class="input_mensaje " type="text"></Input>
                 <p id="alerta"></p>
-                <button id="btn_enviar" type="submit" class="btn_form btn btn-secondary btn-sm">ENVIAR</button>            
-            </div>
-            <div class="DatosUsuario" style="width: 100%">
-                <div class="card">
-                    <div class="card-header">
-                      USUARIOS REGISTRADOS
-                    </div>
-                    <div id="tarjeta" class="card-body">
-                      <p id="tarjetaNombre" class="card-text"></p>
-                      <p id="tarjetaApellido" class="card-text"></p>
-                      <p id="tarjetaMail" class="card-text"></p>
-                    </div>
-                    <button id="btnEliminar" type="submit" class="btn_form btn btn-secondary btn-sm">Eliminar todo</button>
-                    <div id="divEliminar" style="margin: 15px;"></div>
-                  </div>
+                <button id="btn_enviar" type="submit" class="btn_form btn btn-secondary btn-sm">ENVIAR</button>    
+                <div id="loadingMessage" class="d-flex align-items-center alert alert-info mt-3 visually-hidden">
+                    <strong>Guardando información...</strong>
+                    <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+                </div>   
+                  
             </div>
             <div class="info fuente_nav">
                 <h4>MAIL</h4>

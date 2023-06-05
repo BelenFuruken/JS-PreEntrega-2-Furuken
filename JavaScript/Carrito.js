@@ -22,7 +22,7 @@ const baseDeDatos = [
         id: 4,
         nombre: 'Casacas',
         precio: 17000,
-        imagen: '../img/casaca.JPGS'
+        imagen: '../img/casaca.JPG'
     }
 
 ];
@@ -33,13 +33,14 @@ const DOMitems = document.querySelector('#items');
 const DOMcarrito = document.querySelector('#carrito');
 const DOMtotal = document.querySelector('#total');
 const DOMbotonVaciar = document.querySelector('#boton-comprar');
+const DOMbotonBorrarTodo = document.querySelector('#boton-eliminar-todo');
 
-// Funciones
+// Funciones:
 
-/**
- * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
- */
+//Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
 function renderizarProductos() {
+    // Por cada elemento del array de objetos "baseDeDatos" voy a generar
+    // todo esto (que es la estructura de la tarjeta de cada producto)
     baseDeDatos.forEach((info) => {
         // Estructura
         const miNodo = document.createElement('div');
@@ -75,19 +76,18 @@ function renderizarProductos() {
     });
 }
 
-/**
- * Evento para añadir un producto al carrito de la compra
- */
+// Evento para añadir un producto al carrito de la compra
 function aniadirProductoAlCarrito(evento) {
-    // Anyadimos el Nodo a nuestro carrito
+    // Añadimos el Nodo a nuestro carrito
     carrito.push(evento.target.getAttribute('marcador'))
+    console.log("el carrito guardo: "+carrito);
     // Actualizamos el carrito 
     renderizarCarrito();
+    // Actualizamos el LocalStorage
+    guardarCarritoEnLocalStorage();
 }
 
-/**
- * Dibuja todos los productos guardados en el carrito
- */
+//Dibuja todos los productos guardados en el carrito
 function renderizarCarrito() {
     // Vaciamos todo el html
     DOMcarrito.textContent = '';
@@ -95,7 +95,9 @@ function renderizarCarrito() {
     const carritoSinDuplicados = [...new Set(carrito)];
     // Generamos los Nodos a partir de carrito
     carritoSinDuplicados.forEach((item) => {
-        // Obtenemos el item que necesitamos de la variable base de datos
+        // Obtenemos el item que necesitamos de la variable base de datos (es decir, 
+        //con el numero de id guardado en el array de carritos bucamos la informacion
+        // que contiene).
         const miItem = baseDeDatos.filter((itemBaseDatos) => {
             // ¿Coincide las id? Solo puede existir un caso
             return itemBaseDatos.id === parseInt(item);
@@ -108,7 +110,8 @@ function renderizarCarrito() {
         // Creamos el nodo del item del carrito
         const miNodo = document.createElement('li');
         miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
-        miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+        //con la informacion entera completamos:
+        miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio*numeroUnidadesItem}${divisa}`;
         // Boton de borrar
         const miBoton = document.createElement('button');
         miBoton.classList.add('btn', 'btn-danger', 'mx-5');
@@ -124,9 +127,7 @@ function renderizarCarrito() {
     DOMtotal.textContent = calcularTotal();
 }
 
-/**
- * Evento para borrar un elemento del carrito
- */
+//Evento para borrar un elemento del carrito
 function borrarItemCarrito(evento) {
     //PREGUNTA PARA CONFIRMAR CON SWEET ALERT
     Swal.fire({
@@ -150,14 +151,14 @@ function borrarItemCarrito(evento) {
         });
         // volvemos a renderizar
         renderizarCarrito();
+        // Actualizamos el LocalStorage
+        guardarCarritoEnLocalStorage();
         }
       })
     
 }
 
-/**
- * Calcula el precio total teniendo en cuenta los productos repetidos
- */
+// Calcula el precio total teniendo en cuenta los productos repetidos
 function calcularTotal() {
     // Recorremos el array del carrito 
     return carrito.reduce((total, item) => {
@@ -170,9 +171,7 @@ function calcularTotal() {
     }, 0).toFixed(2);
 }
 
-/**
- * Varia el carrito y vuelve a dibujarlo
- */
+// Varia el carrito y vuelve a dibujarlo
 function Comprar() {
     const chequearCompra = (rta) =>{
         return new Promise ((resolve,reject) => {
@@ -188,20 +187,45 @@ function Comprar() {
             'Su compra ha sido realizado con éxito!',
             'Cantidad: '+cant+' elementos',
             'success'
-          )
-        console.log("La promesa dio favorable. Compro "+cant+" elementos")
+        //Promesa favorable.  
+        )
     }).catch((error)=>{
         Swal.fire({
             icon: 'error',
             title: 'No tiene nada en su carrito de compras',
-          })
-        console.log("La promesa dio desfavorable porque "+error);
+        //Promesa desfavorable.
+        })
     })
+}
+
+function vaciarCarrito() {
+    // Limpiamos los productos guardados
+    carrito = [];
+    // Renderizamos los cambios
+    renderizarCarrito();
+    // Borra LocalStorage
+    localStorage.clear();
+
+}
+
+function guardarCarritoEnLocalStorage () {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+function cargarCarritoDeLocalStorage () {
+    // ¿Existe un carrito previo guardado en LocalStorage?
+    if (localStorage.getItem('carrito') !== null) {
+        // Carga la información
+        carrito = JSON.parse(localStorage.getItem('carrito'));
+    }
 }
 
 // Eventos
 DOMbotonVaciar.addEventListener('click', Comprar);
+DOMbotonBorrarTodo.addEventListener('click',vaciarCarrito);
+
 
 // Inicio
+cargarCarritoDeLocalStorage();   
 renderizarProductos();
 renderizarCarrito();
