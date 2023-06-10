@@ -1,0 +1,9 @@
+[
+    {"nombre": "Juan", "apellido": "Perez", "id":1},
+    {"nombre": "Matín", "apellido": "Jimenez", "id":2},
+    {"nombre": "Lucas", "apellido": "Molina", "id":3},
+    {"nombre": "Andres", "apellido": "Dimaria", "id":4},
+    {"nombre": "Matias", "apellido": "Furuken", "id":5},
+    {"nombre": "Ignacio", "apellido": "Hermida", "id":6},
+    {"nombre": "Agustin", "apellido": "Garay", "id":7}
+]

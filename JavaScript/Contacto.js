@@ -42,5 +42,23 @@ function toggleLoadingContainer() {
         })
     }, 2000);
 }
+//Carga de tabla con los administradores cargados en la Api
+let datosTabla=document.getElementById("cargaDatosTabla");
+datosTabla.innerHTML="";
+ function tablaAdministradores(){
+    fetch("./../data/myApi.json")
+    .then((res) => (res).json())
+    .then((info) => {
+        info.forEach((element) => {
+        let agregar=document.createElement("tr");
+        agregar.innerHTML=
+        `<th scope="row">${element.id}</th>
+        <td>${element.nombre}</td>
+        <td>${element.apellido}</td>`;
+        datosTabla.append(agregar);
+        });
+    })
+}
 
+tablaAdministradores();
 document.getElementById("btn_enviar").addEventListener("click", envioDeFormulario);
