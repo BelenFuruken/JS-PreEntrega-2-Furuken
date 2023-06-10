@@ -45,7 +45,7 @@ function toggleLoadingContainer() {
 //Carga de tabla con los administradores cargados en la Api
 let datosTabla=document.getElementById("cargaDatosTabla");
 datosTabla.innerHTML="";
- function tablaAdministradores(){
+function tablaAdministradores(){
     fetch("./../data/myApi.json")
     .then((res) => (res).json())
     .then((info) => {

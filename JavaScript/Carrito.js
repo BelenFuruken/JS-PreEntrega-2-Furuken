@@ -80,7 +80,6 @@ function renderizarProductos() {
 function aniadirProductoAlCarrito(evento) {
     // Añadimos el Nodo a nuestro carrito
     carrito.push(evento.target.getAttribute('marcador'))
-    console.log("el carrito guardo: "+carrito);
     // Actualizamos el carrito 
     renderizarCarrito();
     // Actualizamos el LocalStorage
